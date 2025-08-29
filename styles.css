@@ -1,19 +1,20 @@
 /* SISTEMA DE DISEÑO */
+
 :root {
-    /* Colores primarios */
-    --color-primary: #2563eb;
-    --color-primary-dark: #1d4ed8;
-    --color-primary-light: #60a5fa;
+    /* Naranja suave - Principal */
+    --color-primary: #fb923c;
+    --color-primary-dark: #ea580c;
+    --color-primary-light: #fed7aa;
 
-    /* Colores secundarios */
-    --color-secondary: #10b981;
-    --color-secondary-dark: #059669;
+    /* Azul royal - Secundario */
+    --color-secondary: #2563eb;
+    --color-secondary-dark: #1d4ed8;
 
-    /* Color WhatsApp */
+    /* WhatsApp */
     --color-whatsapp: #25d366;
     --color-whatsapp-dark: #128c7e;
 
-    /* Colores neutros */
+    /* Neutros */
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -52,7 +53,7 @@
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: var(--font-primary), ui-sans-serif;
     line-height: 1.6;
     color: var(--color-gray-800);
     background-color: white;

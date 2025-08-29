@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUBUK - Internet de Alta Velocidad | Ocampo, Angangueo, Aporo</title>
-    <meta name="description" content="Internet de alta velocidad por fibra óptica y antena en Ocampo, Angangueo y Aporo. Instalación profesional, soporte 24/7 y precios accesibles.">
-    <meta name="keywords" content="internet Ocampo, internet Angangueo, internet Aporo, fibra óptica Michoacán, internet por antena">
+    <meta name="description"
+          content="Internet de alta velocidad por fibra óptica y antena en Ocampo, Angangueo y Aporo. Instalación profesional, soporte 24/7 y precios accesibles.">
+    <meta name="keywords"
+          content="internet Ocampo, internet Angangueo, internet Aporo, fibra óptica Michoacán, internet por antena">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -57,7 +59,8 @@
             <div class="col-lg-6">
                 <div class="fade-in-up" style="margin-top: 100px; margin-bottom: 60px;">
                     <h1>Internet de Alta Velocidad</h1>
-                    <p>Conectamos tu hogar o negocio con la mejor tecnología de fibra óptica e internet inalámbrico por antena. Instalación profesional en menos de 24 horas.</p>
+                    <p>Conectamos tu hogar o negocio con la mejor tecnología de fibra óptica e internet inalámbrico por
+                        antena. Instalación profesional en menos de 24 horas.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="https://wa.me/52XXXXXXXXXX?text=Quiero%20solicitar%20una%20cotización%20para%20internet"
                            class="btn btn-light btn-lg" target="_blank">
@@ -167,7 +170,8 @@
                         <i class="fas fa-home"></i>
                     </div>
                     <h4>Internet Residencial</h4>
-                    <p>Planes de internet por fibra óptica e inalámbrico para tu hogar, con velocidades desde 10 Mbps hasta 50 Mbps.</p>
+                    <p>Planes de internet por fibra óptica e inalámbrico para tu hogar, con velocidades desde 10 Mbps
+                        hasta 50 Mbps.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -176,7 +180,8 @@
                         <i class="fas fa-building"></i>
                     </div>
                     <h4>Internet Empresarial</h4>
-                    <p>Soluciones corporativas con ancho de banda dedicado, IP fija y soporte técnico especializado 24/7.</p>
+                    <p>Soluciones corporativas con ancho de banda dedicado, IP fija y soporte técnico especializado
+                        24/7.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -212,7 +217,8 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h4>Seguridad en Red</h4>
-                    <p>Configuración de firewalls, monitoreo de tráfico y filtrado de contenido para proteger tu conexión.</p>
+                    <p>Configuración de firewalls, monitoreo de tráfico y filtrado de contenido para proteger tu
+                        conexión.</p>
                 </div>
             </div>
         </div>
@@ -317,31 +323,6 @@
                     </form>
                 </div>
 
-                <!-- Contact Info -->
-                <div class="row g-4 mt-4">
-                    <div class="col-md-4 text-center">
-                        <div class="service-icon mx-auto">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <h6>WhatsApp</h6>
-                        <p>+52 (XXX) XXX-XXXX</p>
-                        <a href="https://wa.me/52XXXXXXXXXX" target="_blank" class="btn btn-sm btn-outline-primary">Chatear</a>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <div class="service-icon mx-auto">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h6>Teléfono</h6>
-                        <p>+52 (XXX) XXX-XXXX</p>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <div class="service-icon mx-auto">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h6>Horarios</h6>
-                        <p>Lun-Vie: 8AM-6PM<br>Sáb: 9AM-2PM</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -360,7 +341,8 @@
                 <div class="mt-3">
                     <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/52XXXXXXXXXX" class="text-light" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/52XXXXXXXXXX" class="text-light" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -372,7 +354,7 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     // Initialize EmailJS
-    (function() {
+    (function () {
         emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // Reemplazar con tu clave pública
     })();
 
@@ -413,15 +395,15 @@
 
         // Send email using EmailJS
         emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-            .then(function(response) {
+            .then(function (response) {
                 alert('¡Gracias por tu solicitud! Te contactaremos pronto para brindarte una cotización personalizada.');
                 document.getElementById('contactForm').reset();
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.error('Error sending email:', error);
                 alert('Hubo un problema al enviar tu solicitud. Por favor, contáctanos por WhatsApp.');
             })
-            .finally(function() {
+            .finally(function () {
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
             });
