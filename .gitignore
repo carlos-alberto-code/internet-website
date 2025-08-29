@@ -1,0 +1,62 @@
+# Node modules
+node_modules/
+
+# Build output
+/dist/
+/build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Dependencias
+package-lock.json
+yarn.lock
+
+# Compilados
+*.js
+*.js.map
+*.css.map
+
+# Otros
+.env
+.env.local
+.env.*.local
+
+# Bootstrap (si se instala por npm, ya está cubierto por node_modules)
+
+# HTML y CSS generados (si aplica)
+
+# Tests
+/coverage/
+
+# Cache
+.cache/
+
+# SASS/SCSS
+*.sass-cache
+
+# Otros archivos de configuración local
+*.local
+
+# Excluir archivos de salida de herramientas
+out/
+
