@@ -42,9 +42,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <div class="fade-in-up" style="margin-top: 100px;">
+                <div class="fade-in-up" style="margin-top: 100px; margin-bottom: 60px;">
                     <h1>Internet de Alta Velocidad por Antena</h1>
-                    <p>Conectamos tu hogar o negocio con la mejor tecnología inalámbrica. Instalación profesional, velocidades garantizadas y soporte técnico especializado.</p>
+                    <p>Conectamos tu hogar o negocio con la mejor tecnología inalámbrica. Instalación profesional,
+                        velocidades garantizadas y soporte técnico especializado.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#contacto" class="btn btn-light btn-lg">
                             <i class="fas fa-phone me-2"></i>Solicitar Cotización
@@ -78,7 +79,8 @@
                         <i class="fas fa-satellite-dish"></i>
                     </div>
                     <h4>Instalación de Antenas</h4>
-                    <p>Instalación profesional de equipos de última generación con garantía extendida y soporte técnico especializado.</p>
+                    <p>Instalación profesional de equipos de última generación con garantía extendida y soporte técnico
+                        especializado.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -87,7 +89,8 @@
                         <i class="fas fa-wifi"></i>
                     </div>
                     <h4>Internet Residencial</h4>
-                    <p>Planes de internet de alta velocidad para el hogar con velocidades desde 10 Mbps hasta 100 Mbps.</p>
+                    <p>Planes de internet de alta velocidad para el hogar con velocidades desde 10 Mbps hasta 100
+                        Mbps.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -114,7 +117,8 @@
                         <i class="fas fa-headset"></i>
                     </div>
                     <h4>Soporte Técnico</h4>
-                    <p>Atención técnica especializada para resolver cualquier inconveniente de manera rápida y eficiente.</p>
+                    <p>Atención técnica especializada para resolver cualquier inconveniente de manera rápida y
+                        eficiente.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -228,7 +232,8 @@
                             </div>
                             <div class="col-12">
                                 <label for="mensaje" class="form-label">Mensaje adicional</label>
-                                <textarea class="form-control" id="mensaje" rows="4" placeholder="Cuéntanos más detalles sobre tus necesidades..."></textarea>
+                                <textarea class="form-control" id="mensaje" rows="4"
+                                          placeholder="Cuéntanos más detalles sobre tus necesidades..."></textarea>
                             </div>
                             <div class="col-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-lg">
@@ -306,7 +311,7 @@
     });
 
     // Form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Get form data
@@ -334,7 +339,7 @@
     });
 
     // Navbar background on scroll
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
             navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
@@ -351,7 +356,7 @@
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
