@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaNet - Internet por Antena</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* SISTEMA DE DISEÑO */
+        :root {
+            /* Colores primarios */
+            --color-primary: #2563eb;
+            --color-primary-dark: #1d4ed8;
+            --color-primary-light: #60a5fa;
+
+            /* Colores secundarios */
+            --color-secondary: #10b981;
+            --color-secondary-dark: #059669;
+
+            /* Colores neutros */
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-600: #4b5563;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+
+            /* Tipografía */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+
+            /* Espaciado */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+
+            /* Sombras */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+            /* Bordes */
+            --border-radius: 0.5rem;
+            --border-radius-lg: 1rem;
+        }
+
+        /* Reset y base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--color-gray-800);
+            background-color: white;
+        }
+
+        /* Componentes base */
+        .btn-primary {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline-primary {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            transform: translateY(-1px);
+        }
+
+        /* Header */
+        .navbar {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            padding: var(--spacing-sm) 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: var(--font-size-xl);
+            color: var(--color-primary) !important;
+        }
+
+        .nav-link {
+            color: var(--color-gray-600) !important;
+            font-weight: 500;
+            margin: 0 var(--spacing-xs);
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-xl) 0;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        /* Cards */
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: 1px solid var(--color-gray-100);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-title p {
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--color-gray-50);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-control {
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-gray-200);
+            padding: 0.75rem 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-gray-900);
+            color: white;
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        /* Utilities */
+        .text-primary {
+            color: var(--color-primary) !important;
+        }
+
+        .bg-light-custom {
+            background-color: var(--color-gray-50);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#inicio">
+            <i class="fas fa-wifi me-2"></i>ConectaNet
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ventajas">Ventajas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="inicio" class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="fade-in-up">
+                    <h1>Internet de Alta Velocidad por Antena</h1>
+                    <p>Conectamos tu hogar o negocio con la mejor tecnología inalámbrica. Instalación profesional, velocidades garantizadas y soporte técnico especializado.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contacto" class="btn btn-light btn-lg">
+                            <i class="fas fa-phone me-2"></i>Solicitar Cotización
+                        </a>
+                        <a href="#servicios" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-info-circle me-2"></i>Ver Servicios
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="mt-4 mt-lg-0">
+                    <i class="fas fa-satellite-dish" style="font-size: 12rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="servicios" class="section">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos soluciones completas de conectividad para satisfacer todas tus necesidades</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h4>Instalación de Antenas</h4>
+                    <p>Instalación profesional de equipos de última generación con garantía extendida y soporte técnico especializado.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h4>Internet Residencial</h4>
+                    <p>Planes de internet de alta velocidad para el hogar con velocidades desde 10 Mbps hasta 100 Mbps.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h4>Internet Empresarial</h4>
+                    <p>Soluciones corporativas con ancho de banda dedicado, IP fija y soporte técnico 24/7.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>Mantenimiento</h4>
+                    <p>Servicio de mantenimiento preventivo y correctivo para garantizar el óptimo funcionamiento.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Soporte Técnico</h4>
+                    <p>Atención técnica especializada para resolver cualquier inconveniente de manera rápida y eficiente.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h4>Configuración de Red</h4>
+                    <p>Configuración completa de tu red doméstica o empresarial para maximizar el rendimiento.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Advantages Section -->
+<section id="ventajas" class="section bg-light-custom">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>¿Por qué elegirnos?</h2>
+            <p>Somos especialistas en conectividad inalámbrica con años de experiencia</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="fade-in-up">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h5>Alta Velocidad</h5>
+                    <p>Velocidades de hasta 100 Mbps para toda tu familia</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="fade-in-up">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h5>Instalación Rápida</h5>
+                    <p>Instalación profesional en menos de 24 horas</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="fade-in-up">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Confiabilidad</h5>
+                    <p>99.5% de disponibilidad garantizada</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="fade-in-up">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h5>Precios Competitivos</h5>
+                    <p>Las mejores tarifas del mercado sin comprometer calidad</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contacto" class="section">
+    <div class="container">
+        <div class="section-title fade-in-up">
+            <h2>Contáctanos</h2>
+            <p>Estamos listos para conectarte. Solicita tu cotización sin compromiso</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form fade-in-up">
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre completo *</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono *</label>
+                                <input type="tel" class="form-control" id="telefono" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="col-12">
+                                <label for="direccion" class="form-label">Dirección de instalación *</label>
+                                <input type="text" class="form-control" id="direccion" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="servicio" class="form-label">Tipo de servicio *</label>
+                                <select class="form-control" id="servicio" required>
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="residencial">Internet Residencial</option>
+                                    <option value="empresarial">Internet Empresarial</option>
+                                    <option value="instalacion">Solo Instalación</option>
+                                    <option value="mantenimiento">Mantenimiento</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="velocidad" class="form-label">Velocidad deseada</label>
+                                <select class="form-control" id="velocidad">
+                                    <option value="">Selecciona velocidad</option>
+                                    <option value="10mbps">10 Mbps</option>
+                                    <option value="20mbps">20 Mbps</option>
+                                    <option value="50mbps">50 Mbps</option>
+                                    <option value="100mbps">100 Mbps</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label">Mensaje adicional</label>
+                                <textarea class="form-control" id="mensaje" rows="4" placeholder="Cuéntanos más detalles sobre tus necesidades..."></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="row g-4 mt-4">
+                    <div class="col-md-4 text-center">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h6>Teléfono</h6>
+                        <p>+52 (XXX) XXX-XXXX</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h6>Email</h6>
+                        <p>info@conectanet.com</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="service-icon mx-auto">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h6>Horarios</h6>
+                        <p>Lun-Vie: 8AM-6PM<br>Sáb: 9AM-2PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h5 class="text-primary mb-3">
+                    <i class="fas fa-wifi me-2"></i>ConectaNet
+                </h5>
+                <p>&copy; 2025 ConectaNet. Todos los derechos reservados.</p>
+                <div class="mt-3">
+                    <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 70; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = {
+            nombre: document.getElementById('nombre').value,
+            telefono: document.getElementById('telefono').value,
+            email: document.getElementById('email').value,
+            direccion: document.getElementById('direccion').value,
+            servicio: document.getElementById('servicio').value,
+            velocidad: document.getElementById('velocidad').value,
+            mensaje: document.getElementById('mensaje').value
+        };
+
+        // Here you would typically send the data to your backend
+        // For now, we'll just show an alert
+        alert('¡Gracias por tu interés! Te contactaremos pronto para brindarte una cotización personalizada.');
+
+        // Reset form
+        this.reset();
+
+        // In a real implementation, you would use something like:
+        // - Formspree: https://formspree.io/
+        // - EmailJS: https://www.emailjs.com/
+        // - Netlify Forms (if using Netlify)
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(10px)';
+        } else {
+            navbar.style.backgroundColor = 'white';
+            navbar.style.backdropFilter = 'none';
+        }
+    });
+
+    // Animation on scroll (simple version)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all fade-in-up elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>
